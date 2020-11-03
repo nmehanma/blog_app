@@ -1,24 +1,10 @@
-# README
+Git for Version control
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+-check status
+-add the files and new changes to track
+-commit the changes/discard the changes as well
+-save your code to online repositories -github
 
-Things you may want to cover:
+RSpec and Capybara
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Write out the scenario in a test file
