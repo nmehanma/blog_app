@@ -32,5 +32,18 @@ RSpec.feature "Showing an article" do
     expect(page).not_to have_link("Edit Article")
     expect(page).not_to have_link("Delete Article")
   end
+
+  scenario "Signedin owner sees both edit and delete buttons" do
+    login_as(@john)
+    visit "/"
+    click_link @article.title
+
+    expect(page).to have_content(@article.title)
+    expect(page).to have_content(@article.body)
+    expect(current_path).to eq(article_path(@article))
+
+    expect(page).to have_link("Edit Article")
+    expect(page).to have_link("Delete Article")
+  end
 end
 
