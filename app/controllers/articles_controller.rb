@@ -23,6 +23,8 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @comment = @article.comments.build
+    @comments = @article.comments
   end
 
   def edit
@@ -48,9 +50,14 @@ class ArticlesController < ApplicationController
   end 
 
   def destroy 
-    if @article.destroy
-      flash[:success] = "Article has been deleted"
-      redirect_to articles_path
+    unless @article.user == current_user
+      flash[:danger] = "You can only edit your own article"
+      redirect_to root_path
+    else 
+      if @article.destroy
+        flash[:success] = "Article has been deleted"
+        redirect_to articles_path
+      end
     end
   end
 

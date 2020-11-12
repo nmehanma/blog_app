@@ -33,7 +33,7 @@ RSpec.feature "Showing an article" do
     expect(page).not_to have_link("Delete Article")
   end
 
-  scenario "Signedin owner sees both edit and delete buttons" do
+  scenario "A signed in owner sees both Edit and Delete buttons" do
     login_as(@john)
     visit "/"
     click_link @article.title
